@@ -36,3 +36,5 @@ npx vite-react-tailwind-setup <project-name>
 cd <project Name>
 npm run dev
 ```
+
+NPM Package : https://www.npmjs.com/package/vite-react-tailwind-setup
