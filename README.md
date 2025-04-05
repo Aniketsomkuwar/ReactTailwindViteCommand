@@ -1,5 +1,9 @@
+## Usage
+
+Instead of installing the package globally, you can use `npx` to run it directly without installation:
+
 ```
-npm vite-react-tailwind-setup <project Name>
+npx vite-react-tailwind-setup <project Name>
 ```
 
 🚀 The Vite project with React + Tailwind will be created...
