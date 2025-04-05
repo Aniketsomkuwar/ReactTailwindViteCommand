@@ -1,10 +1,17 @@
+# vite-react-tailwind-setup
+
+This CLI tool sets up a Vite + React + Tailwind project with a single command!
+
 ## Usage
 
 Instead of installing the package globally, you can use `npx` to run it directly without installation:
 
-```
-npx vite-react-tailwind-setup <project Name>
-```
+```bash
+npx vite-react-tailwind-setup <project-name>
+
+
+
+
 
 🚀 The Vite project with React + Tailwind will be created...
 
@@ -29,6 +36,10 @@ npx vite-react-tailwind-setup <project Name>
 👉 Next steps:
 
 ```
+
 cd <project Name>
 npm run dev
+
+```
+
 ```
