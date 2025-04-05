@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const { program } = require("commander");
 const { execa } = require("execa");
 const fs = require("fs").promises;
@@ -9,62 +10,67 @@ program
     .argument("<projectName>", "The name of the project to create")
     .action(async (projectName) => {
         try {
-            console.log(`Creating Vite project with React + Tailwind template...`);
-            await execa("npm", ["create", "vite@latest", projectName, "--", "--template", "react"], { stdio: "inherit" });
+            console.log(`🚀 Creating Vite project with React + Tailwind template...`);
+
+            await execa(
+                "npm",
+                ["create", "vite@latest", projectName, "--", "--template", "react"],
+                { stdio: "inherit" }
+            );
 
             const projectDir = path.join(process.cwd(), projectName);
             process.chdir(projectDir);
 
-            console.log("Installing Tailwind CSS");
-            await execa("npm", ["install", "tailwindcss", "@tailwindcss/vite"]);
+            console.log("📦 Installing Tailwind CSS...");
+            await execa("npm", ["install", "tailwindcss", "@tailwindcss/vite"], {
+                stdio: "inherit",
+            });
 
-            const indexCssPath = path.join(projectDir, "src", "index.css");
+            // Paths
+            const paths = {
+                indexCss: path.join(projectDir, "src", "index.css"),
+                viteConfig: path.join(projectDir, "vite.config.js"),
+                html: path.join(projectDir, "index.html"),
+                readme: path.join(projectDir, "README.md"),
+                app: path.join(projectDir, "src", "App.jsx"),
+                appCss: path.join(projectDir, "src", "App.css"),
+                viteSvg: path.join(projectDir, "public", "vite.svg"),
+                reactSvg: path.join(projectDir, "src", "assets", "react.svg"),
+            };
 
-            const viteConfigPath = path.join(projectDir, "vite.config.js");
+            // Delete unwanted files
+            console.log("🧹 Cleaning up default assets...");
+            await Promise.allSettled([
+                fs.unlink(paths.reactSvg),
+                fs.unlink(paths.viteSvg),
+                fs.unlink(paths.appCss),
+            ]);
 
-            const htmlPath = path.join(projectDir, "index.html");
+            // Update files
+            console.log("📝 Updating README.md...");
+            await fs.writeFile(paths.readme, "");
 
-            const readmePath = path.join(projectDir, "README.md");
-
-            const appPath = path.join(projectDir, "src", "App.jsx");
-
-            const appCssPath = path.join(projectDir, "src", "App.css");
-
-            const viteSvgPath = path.join(projectDir, "public", "vite.svg");
-
-            const reactSvgPath = path.join(projectDir, "src", "assets", "react.svg");
-
-            console.log("Deleting extra svg's");
-            await fs.unlink(reactSvgPath);
-            await fs.unlink(viteSvgPath);
-
-            console.log("Deleting extra files");
-            await fs.unlink(appCssPath);
-
-
-            console.log("Updating Readme...");
+            console.log("🔧 Updating vite.config.js...");
             await fs.writeFile(
-                readmePath,
-                ``
-            );
-
-            console.log("Updating vite.config.js...");
-            await fs.writeFile(
-                viteConfigPath,
+                paths.viteConfig,
                 `import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 export default defineConfig({
     plugins: [react(), tailwindcss()],
-})`
+})
+`
             );
 
-            console.log("Updating src/index.css...");
-            await fs.writeFile(indexCssPath, `@import "tailwindcss";`);
-
-            console.log("Updating index.html");
+            console.log("🎨 Updating src/index.css...");
             await fs.writeFile(
-                htmlPath,
+                paths.indexCss,
+                `@import "tailwindcss";`
+            );
+
+            console.log("🧾 Updating index.html...");
+            await fs.writeFile(
+                paths.html,
                 `<!doctype html>
 <html lang="en">
 
@@ -81,9 +87,9 @@ export default defineConfig({
 </html>`
             );
 
-            console.log("Updating app.jsx");
+            console.log("⚛️ Updating App.jsx...");
             await fs.writeFile(
-                appPath,
+                paths.app,
                 `import React from 'react';
                 const App = () => {
                 
@@ -98,14 +104,19 @@ export default defineConfig({
                 export default App`
             );
 
-            console.log("Running npm install...");
+            console.log("📥 Running npm install...");
             await execa("npm", ["install"], { stdio: "inherit" });
 
-            console.log(`✅ Setup complete! Run the following:
-cd ${projectName}
-npm run dev`);
+            await execa(console.log(`✅ Setup complete!
+
+                👉 Next steps:
+                  cd ${projectName}
+                  npm run dev
+                `));
+
+
         } catch (error) {
-            console.error("An error occurred:", error);
+            console.error("❌ An error occurred:", error.message || error);
         }
     });
 
