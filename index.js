@@ -107,12 +107,13 @@ export default defineConfig({
             console.log("📥 Running npm install...");
             await execa("npm", ["install"], { stdio: "inherit" });
 
-            await execa(console.log(`✅ Setup complete!
+            console.log(`✅ Setup complete!
 
                 👉 Next steps:
                   cd ${projectName}
                   npm run dev
-                `));
+                `);
+
 
 
         } catch (error) {
