@@ -10,7 +10,9 @@ program
     .argument("<projectName>", "The name of the project to create")
     .action(async (projectName) => {
         try {
-            console.log(`🚀 Creating Vite project with React + Tailwind template...`);
+            console.log(`🚀 Creating Vite project with React + Tailwind...
+    
+`);
 
             await execa(
                 "npm",
@@ -21,7 +23,7 @@ program
             const projectDir = path.join(process.cwd(), projectName);
             process.chdir(projectDir);
 
-            console.log("📦 Installing Tailwind CSS...");
+            console.log("📦 Installing Tailwind CSS... 🟥 🟧 🟨 🟩 🟦 🟪");
             await execa("npm", ["install", "tailwindcss", "@tailwindcss/vite"], {
                 stdio: "inherit",
             });
@@ -112,6 +114,20 @@ export default defineConfig({
                 👉 Next steps:
                   cd ${projectName}
                   npm run dev
+
+
+
+                Author =>
+
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+⬜️⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨⬜️⬜️⬜️
+⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
+⬜️🟨🟨⬜️🟨⬜️⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️⬜️🟨🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
+⬜️⬜️⬜️⬜️🟨⬜️🟨⬜️⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨🟨🟨⬜️⬜️⬜️⬜️🟨🟨⬜️🟨
+⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️⬜️🟨🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
+⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
+⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨🟨⬜️🟨
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
                 `);
 
 
