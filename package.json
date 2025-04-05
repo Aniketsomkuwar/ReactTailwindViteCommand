@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "A CLI tool to quickly create Vite projects with React and Tailwind CSS.",
   "bin": {
-    "vite-react-tailwind": "index.js"
+    "vite-react-tailwind-setup": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
     "Somkuwar"
   ],
   "author": "Aniket Somkuwar <aniketsomkuwar1101@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "commander": "^13.1.0",

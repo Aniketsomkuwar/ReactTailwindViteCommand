@@ -13,6 +13,7 @@ program
             console.log(`🚀 Creating Vite project with React + Tailwind...
     
 `);
+            console.log("");
 
             await execa(
                 "npm",
@@ -24,6 +25,7 @@ program
             process.chdir(projectDir);
 
             console.log("📦 Installing Tailwind CSS... 🟥 🟧 🟨 🟩 🟦 🟪");
+            console.log("");
             await execa("npm", ["install", "tailwindcss", "@tailwindcss/vite"], {
                 stdio: "inherit",
             });
@@ -42,6 +44,7 @@ program
 
             // Delete unwanted files
             console.log("🧹 Cleaning up default assets...");
+            console.log("");
             await Promise.allSettled([
                 fs.unlink(paths.reactSvg),
                 fs.unlink(paths.viteSvg),
@@ -50,9 +53,11 @@ program
 
             // Update files
             console.log("📝 Updating README.md...");
+            console.log("");
             await fs.writeFile(paths.readme, "");
 
             console.log("🔧 Updating vite.config.js...");
+            console.log("");
             await fs.writeFile(
                 paths.viteConfig,
                 `import { defineConfig } from 'vite'
@@ -65,12 +70,14 @@ export default defineConfig({
             );
 
             console.log("🎨 Updating src/index.css...");
+            console.log("");
             await fs.writeFile(
                 paths.indexCss,
                 `@import "tailwindcss";`
             );
 
             console.log("🧾 Updating index.html...");
+            console.log("");
             await fs.writeFile(
                 paths.html,
                 `<!doctype html>
@@ -90,6 +97,7 @@ export default defineConfig({
             );
 
             console.log("⚛️ Updating App.jsx...");
+            console.log("");
             await fs.writeFile(
                 paths.app,
                 `import React from 'react';
@@ -107,17 +115,20 @@ export default defineConfig({
             );
 
             console.log("📥 Running npm install...");
+            console.log("");
             await execa("npm", ["install"], { stdio: "inherit" });
 
             console.log(`✅ Setup complete!
 
                 👉 Next steps:
                   cd ${projectName}
-                  npm run dev
+                  npm run dev `);
 
 
+            console.log("");
 
-                Author =>
+            console.log(`Author                      
+-------------------------------------------------------------------
 
 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 ⬜️⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨⬜️⬜️⬜️
@@ -127,8 +138,11 @@ export default defineConfig({
 ⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️⬜️🟨🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
 ⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
 ⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨🟨⬜️🟨
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-                `);
+🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨`)
+
+
+
+
 
 
 
