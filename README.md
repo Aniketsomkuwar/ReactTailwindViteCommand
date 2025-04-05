@@ -8,10 +8,7 @@ Instead of installing the package globally, you can use `npx` to run it directly
 
 ```bash
 npx vite-react-tailwind-setup <project-name>
-
-
-
-
+```
 
 🚀 The Vite project with React + Tailwind will be created...
 
@@ -36,10 +33,6 @@ npx vite-react-tailwind-setup <project-name>
 👉 Next steps:
 
 ```
-
 cd <project Name>
 npm run dev
-
-```
-
 ```
