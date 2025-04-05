@@ -6,7 +6,7 @@ const fs = require("fs").promises;
 const path = require("path");
 
 program
-    .version("1.0.0")
+    .version("1.0.2")
     .argument("<projectName>", "The name of the project to create")
     .action(async (projectName) => {
         try {

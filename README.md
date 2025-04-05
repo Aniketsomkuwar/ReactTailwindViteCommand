@@ -1,41 +1,30 @@
-vite-react-tailwind-setup <project Name>
+```
+npm vite-react-tailwind-setup <project Name>
+```
 
-🚀 Creating Vite project with React + Tailwind...
+🚀 The Vite project with React + Tailwind will be created...
 
-│
-◇ Scaffolding project in E:\work_files\BashCommand\myprok...
-│
+📦 Tailwind CSS will be installed... 🟥 🟧 🟨 🟩 🟦 🟪
 
-📦 Installing Tailwind CSS... 🟥 🟧 🟨 🟩 🟦 🟪
+🧹 Default assets will be cleaned up...
 
-🧹 Cleaning up default assets...
+📝 README.md will be updated...
 
-📝 Updating README.md...
+🔧 vite.config.js will be updated...
 
-🔧 Updating vite.config.js...
+🎨 src/index.css will be updated...
 
-🎨 Updating src/index.css...
+🧾 index.html will be updated...
 
-🧾 Updating index.html...
+⚛️ App.jsx will be updated...
 
-⚛️ Updating App.jsx...
+📥 npm install will be run...
 
-📥 Running npm install...
-
-✅ Setup complete!
+✅ Setup will be complete!
 
 👉 Next steps:
+
+```
 cd <project Name>
 npm run dev
-
-## Author
-
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-⬜️⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨⬜️⬜️⬜️
-⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
-⬜️🟨🟨⬜️🟨⬜️⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️⬜️🟨🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
-⬜️⬜️⬜️⬜️🟨⬜️🟨⬜️⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨🟨🟨⬜️⬜️⬜️⬜️🟨🟨⬜️🟨
-⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️⬜️🟨🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
-⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨🟨🟨🟨🟨⬜️🟨
-⬜️🟨🟨⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️🟨⬜️🟨🟨⬜️🟨⬜️⬜️⬜️⬜️🟨🟨⬜️🟨
-🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+```

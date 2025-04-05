@@ -1,5 +1,5 @@
 {
-  "name": "bashcommand",
+  "name": "vite-react-tailwind-setup",
   "version": "1.0.0",
   "main": "index.js",
   "description": "A CLI tool to quickly create Vite projects with React and Tailwind CSS.",
@@ -25,6 +25,7 @@
   "type": "commonjs",
   "dependencies": {
     "commander": "^13.1.0",
-    "execa": "^9.5.2"
+    "execa": "^9.5.2",
+    "link": "^2.1.1"
   }
 }
